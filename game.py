@@ -89,7 +89,7 @@ while("ROOM2" not in database["roomsComplete"]): #room 2 code!
         
         action = input("\n Choose one of the numbers \n")
 
-        if(action != 1):
+        if(action != "1"):
             hiding = False
 
         if(action == "1" and clockActive == False):
@@ -187,10 +187,10 @@ while("ROOM2" not in database["roomsComplete"]): #room 2 code!
                 break
         
 while("ROOM3" not in database["roomsComplete"]):
-    if(clockActive == True):
+    if(clockActive == True and clockNumber > 0):
         clockNumber -= 1
         print("\nYour watch's gears tick, and it shows the number: " + str(clockNumber))
-    if(clockNumber == 0 and clockActive == True):
+    if(clockNumber <= 0 and clockActive == True):
             print("\nThe watch ticks for the final time. You shiver...\n"
                     "\nThe red-eyed reindeer reaches you, knocking you over as it flashes a jagged, toothy, grin. You're paralyzed as your vision fades from the edges.\n"
                       "\nFreedom fades from sight...") # death text
@@ -208,20 +208,19 @@ while("ROOM3" not in database["roomsComplete"]):
 
         if(action == "1"):
             if(clothingCorrect == False):
-                print("\nThe guard looks at you blankly with a drowsy smile. 'Protocol One-Twenty', it says again, before pulling a sandwich out of its pocket and chewing it.") #rise lava
-                print("\nThe lava rises.\n" "\nCurrent lava level:" + str(lava))
+                print("\nThe guard looks at you blankly with a drowsy smile. 'Protocol One-Twenty', it says again, before pulling a sandwich out of its pocket and chewing it.") #rise lavaz
             elif(clothingCorrect == True and receptionScenePlayed == False):
                 print("\nThe guard blinks at you and opens the door without another word.\n") #put reception etntry stuff and maintain lava level here
                 print(("\nYou enter a brightly lit room that very weirdly, empty. The only piece of furniture there is a reception desk, where a wide-eyed reindeer sits, typing away at a keyboard.\n"
                        "It looks up at you, eyes flicking to white like a camera shutter, and in a robotic voice, says, 'Collect your lift ticket, sir.'\n"
                        "You walk over to it and take a white paper ticket from him, which simply says, 'conform, direction: Touching Base' on it...\n"
                        "\n\nThe reindeers' eyes suddenly flicker red, and a gutteral, unworldly scream escapes its mouth, as its skin starts morphing.\n\n"
-                       "\nYour watch ticks to two urgently, as a sense of panic rushes through your skin. A message appears on it. 'RUN.'"))
+                       "\nYour watch ticks to three urgently, as a sense of panic rushes through your skin. A message appears on it. 'RUN.'"))
                 database["items"].append("RECEPTIONTICKET")
-                clockNumber = 3
+                clockNumber = 4
                 clockActive = True
                 receptionScenePlayed = True
-                currentRoom == "ROOM3C"
+                currentRoom = "ROOM3C"
 
         elif(action == "2"):
             print("\nYou enter another dimly lit room with a cabinet labelled 'meds' to your left. There's a lift door on the wall, with a ticket machine next to it.\n"
@@ -286,6 +285,7 @@ while("ROOM3" not in database["roomsComplete"]):
                       "He hands you a Polar fleeced hat and shirt, and a pair of Threaded trousers.\n"
                       "'You'll look spiffing in these,' he says, as you leave the room with the clothes...") #add the correct clothing to the database
                 database["items"].extend(["P_HAT", "P_SHIRT", "T_PANTS"])
+                georgeSolved = True
 
             elif("ANTIBIOTICS" not in database["carryableItems"] and georgeSolved == False):
                 print("\nYou enter a patient room, with a bed in the middle. In the bed, lies a giraffe, with a badge on his gown that says, 'George'.\n"
@@ -308,8 +308,9 @@ while("ROOM3" not in database["roomsComplete"]):
                       "\nHe pulls some clothes out of his bag, handing you a Threaded hat, an Orange shirt, and a Polar fleeced pair of trousers.\n"
                       "'Here, I think you'll look nice in these,' he says, before turning back to pack his stuff, as you walk out the room...")
                 database["items"].extend(["T_HAT", "O_SHIRT", "P_PANTS"])
+                gooberSolved = True
 
-            elif("POPSICLE" not in database["carryableItems"] and georgeSolved == False):
+            elif("POPSICLE" not in database["carryableItems"] and gooberSolved == False):
                 print("\nYou enter a patient (?) room, except it has no medical equipment(?). There's white line markings on the floor and bright lighting.\n"
                       "You hear the bouncing of a volleyball, looking up to see a pink dinosaur in a patient gown with a badge that says, 'Goober'\n"
                       "He catches the volleyball and turns to look at you, before waving at you.\n" \
@@ -403,7 +404,8 @@ while("ROOM3" not in database["roomsComplete"]):
         print("\nYour breathing is heavy as you rush into the room where the guard is. You'd try speak to him but you don't think you have time.")
         currentRoom = "ROOM3A"
 
-while("ROOM4" in database["roomsComplete"]):
+while("ROOM4" not in database["roomsComplete"]):
+    database["roomsComplete"].append("ROOM4")
     print("\nThe lift bell rings with a bright tone, and the doors open, but you can't see anything (?)...\n"
           "There's simply an extremely bright light and suddenly this voice inside your head turns to a whisper.\n"
           "You solved it. You escaped. But for what?\n"
