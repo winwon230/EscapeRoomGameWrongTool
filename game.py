@@ -94,7 +94,6 @@ while("ROOM2" not in database["roomsComplete"]): #room 2 code!
 
         if(action == "1" and clockActive == False):
             print("\n It's empty. Seems like a good hiding spot... The lava rises")
-            lava += 1
             print("\n Current lava level:" + str(lava))
             hiding = True
 
@@ -153,7 +152,10 @@ while("ROOM2" not in database["roomsComplete"]): #room 2 code!
             response = input("\nWho is telling the truth? 1, 2 or 3?")
             if(response == "3"):
                 print("Snake 3 gets out of the chair and smiles at you. 'The code is 483', he says, before slithering through (?) the wall... You head back to the main room.")
-                #idk if i should rise the lava here
+                if(lava >= 1):
+                    lava -= 1
+                    print("\nThe lava lowers. Current lava level:" + str(lava))
+                    
             elif(response != "3"):
                 print("The snakes laugh at you as you head back to the main room... The lava rises.")
                 lava +=1
