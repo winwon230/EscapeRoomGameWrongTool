@@ -17,12 +17,14 @@ I should've put this earlier lol.
     1. Open a terminal
     2. Type `python3 --version`
     3. If a Python version pops up, ur good. Otherwise, go to python.org and download Python
-    4. Run this command: `python3 game.py`
+    4. Type `cd `(including the space), and drag the folder name of wherever you downloaded the game to from Finder into terminal, then press enter.
+    5. Run this command: `python3 game.py`
 3. If you're using Windows:
     1. Open a terminal (which apparently called Command Prompt on Windows lol)
     2. Type `python -- version`
     3. If a Python version pops up, ur good. Otherwise, go to python.org and download Python
-    4. Run this command: `python game.py`
+    4. Open the folder where you downloaded the game onto, click the address bar, copy the folder path, and then in command prompt type `cd ` (including the space) and paste the path, and press enter 
+    5. Run this command: `python game.py`
 4. You're prompted at the beginning of each 'turn' (ig if that's what you want to call it), and you simply answer with a number or a sequence of numbers which tell you what you can do
 ## Cheat code if you're stuck
 - *The clock is important, it tells you how many turns you are away from a monster coming*
