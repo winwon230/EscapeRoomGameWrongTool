@@ -10,21 +10,10 @@ Initially, what I meant for the character was this:
 - The lava almost acts like an afterthought, but with a max level of 5, it is very much dangerous in the first two rooms, and provides a bit of pressure to players to not make mistakes
 - The clock really could symbolise anything, in some forms it's kinda a recall to some kind of traumatic event for the character, which is why it always causes these perculiar events when it activates
 - The ambiguous ending and the conquest through these rooms just to reach some kind of light is a questioning of the meaning of life itself, and I wanted players to think about what effect their actions really have on the world
-## How to play/download
-I should've put this earlier lol.
-1. Download the game.py file off of my Github Repo
-2. If you're using a Mac (which I made this game on):
-    1. Open a terminal
-    2. Type `python3 --version`
-    3. If a Python version pops up, ur good. Otherwise, go to python.org and download Python
-    4. Type `cd `(including the space), and drag the folder name of wherever you downloaded the game to from Finder into terminal, then press enter.
-    5. Run this command: `python3 game.py`
-3. If you're using Windows:
-    1. Open a terminal (which apparently called Command Prompt on Windows lol)
-    2. Type `python -- version`
-    3. If a Python version pops up, ur good. Otherwise, go to python.org and download Python
-    4. Open the folder where you downloaded the game onto, click the address bar, copy the folder path, and then in command prompt type `cd ` (including the space) and paste the path, and press enter 
-    5. Run this command: `python game.py`
+## How to play/download - Game only works on Windows
+1. Go to the releases on Github and download the Windows exe
+2. Open it
+3. If Windows displays a smartscreen warning, select "More Info" -> "Run Anyway"
 4. You're prompted at the beginning of each 'turn' (ig if that's what you want to call it), and you simply answer with a number or a sequence of numbers which tell you what you can do
 ## Cheat code if you're stuck
 - *The clock is important, it tells you how many turns you are away from a monster coming*
